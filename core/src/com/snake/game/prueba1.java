@@ -1,4 +1,4 @@
 package com.snake.game;
 
-public class diegoputo {
+public class prueba1 {
 }
