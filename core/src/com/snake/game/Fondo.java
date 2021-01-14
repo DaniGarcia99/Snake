@@ -1,4 +1,4 @@
 package com.snake.game;
 
-public class prueba1 {
+public class Fondo {
 }
