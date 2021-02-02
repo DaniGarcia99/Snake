@@ -19,6 +19,7 @@ public class Serpiente {
         this.imgSerpiente = new Texture(this.file_serpiente);
     }
 
+
     public void pintate(SpriteBatch miSB) {
         TextureRegion serpiente = new TextureRegion(this.imgSerpiente, this.posX, this.posY);
         miSB.begin();
