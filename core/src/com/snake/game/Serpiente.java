@@ -1,7 +1,8 @@
+package com.snake.game;
+
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
 import com.badlogic.gdx.graphics.g2d.TextureRegion;
-import com.snake.game.Pieza;
 
 import java.util.ArrayList;
 
@@ -16,6 +17,10 @@ public class Serpiente {
     public Serpiente(int PosX, int PosY, int nancho) {
         this.Serpiente.add(new Pieza(PosX, PosY, nancho));
         this.imgSerpiente = new Texture(this.file_serpiente);
+    }
+
+    public Serpiente(Serpiente snake) {
+
     }
 
 
@@ -33,5 +38,12 @@ public class Serpiente {
     }
 
     public void dispose() {
+    }
+
+    public boolean hasMuerto() {
+        return false;
+    }
+
+    public void render(SpriteBatch batch) {
     }
 }

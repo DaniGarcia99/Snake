@@ -19,8 +19,8 @@ public class Controlador {
 
     protected SpriteBatch batch;
 
-    protected Texture inicio;
-    protected Texture final;
+    protected Texture imgInicio;
+    protected Texture imgFinal;
 
     enum VideoJuego {
         INICIO, JUGANDO, FINALIZADO
@@ -38,8 +38,8 @@ public class Controlador {
     private Controlador() {
         controladorVJ = VideoJuego.INICIO;
         batch = new SpriteBatch();
-        inicio = new Texture(IMAGEN_INICIO);
-        final = new Texture(IMAGEN_FINAL);
+        imgInicio = new Texture(IMAGEN_INICIO);
+        imgFinal = new Texture(IMAGEN_FINAL);
         controlTiempo = 1;
    }
 
@@ -97,7 +97,10 @@ public class Controlador {
         }
    }
 
-   public void setSnake (Serpiente nuevaSerpiente){
+    private void finalPartida() {
+    }
+
+    public void setSnake (Serpiente nuevaSerpiente){
         snake = nuevaSerpiente;
    }
 }
