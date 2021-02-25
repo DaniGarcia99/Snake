@@ -13,3 +13,4 @@
 16/02/2021 - Álvaro Ruiz. Clase Serpiente: Añadido otro método Serpiente, un método hasMuerto por el que se comprueba los diferentes casos, y el método cambiaDireccion para ver los posibles cambio de dirección en EstadoTeclado. Aparte se ha editado otros métodos ya creados.
 
 23/02/2021 - Carlos Martinz, Diego David Brescia, Álvaro Ruíz, Daniel García y David Montero. Terminamos de complementar y arreglar las clases ControladorJuego(), EstadoTeclado() y MyGdxSnake().
+25/02/2021 - Daniel Garcia, David Montero, Alvaro Ruiz. Hemos creado la carpeta assets y hemos metido las imagenes inicio,fin,fondo y snake, tambien hemos terminado los diagramas de las clases MyGdxSnake, EstadoTeclado y ControladorJuego en el UML.
