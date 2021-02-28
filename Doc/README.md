@@ -15,3 +15,5 @@
 23/02/2021 - Carlos Martinz, Diego David Brescia, Álvaro Ruíz, Daniel García y David Montero. Terminamos de complementar y arreglar las clases ControladorJuego(), EstadoTeclado() y MyGdxSnake().
 
 25/02/2021 - Daniel Garcia, David Montero, Alvaro Ruiz. Hemos creado la carpeta assets y hemos metido las imagenes inicio,fin,fondo y snake, tambien hemos terminado los diagramas de las clases MyGdxSnake, EstadoTeclado y ControladorJuego en el UML.
+
+28/02/2021 - Daniel Garcia y David Montero. Hemos terminado los diagramas de clases, objetos y de usos con sus respectivas relaciones, tambien hemos creado la carpeta Docs en la que hemos metido el fichero README, el video del snake funcionando y una carpeta mas llamada Diagramas en la que hemos introducido los diferentes tipos de diagramas.
