@@ -36,7 +36,7 @@ public class Serpiente {
         this.anchoAltoPantalla = anchoAltoPantalla;
 
         //Direccion prederteminada
-        direccion = Pieza.DER;
+        direccion = Pieza.ARR;
 
         this.posX = posX;
         this.posY = posY;
@@ -60,7 +60,7 @@ public class Serpiente {
 
         nuevaCabeza = new Pieza(posX, posY, ancho);
 
-        direccion = Pieza.ARR;
+        direccion = Pieza.DER;
 
         miCuerpo = new ArrayList<>();
         miCuerpo.add(nuevaCabeza);
