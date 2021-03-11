@@ -17,3 +17,7 @@
 25/02/2021 - Daniel Garcia, David Montero, Alvaro Ruiz. Hemos creado la carpeta assets y hemos metido las imagenes inicio,fin,fondo y snake, tambien hemos terminado los diagramas de las clases MyGdxSnake, EstadoTeclado y ControladorJuego en el UML.
 
 28/02/2021 - Daniel Garcia y David Montero. Hemos terminado los diagramas de clases, objetos y de usos con sus respectivas relaciones, tambien hemos creado la carpeta Docs en la que hemos metido el fichero README, el video del snake funcionando y una carpeta mas llamada Diagramas en la que hemos introducido los diferentes tipos de diagramas.
+
+09/03/2021 - Daniel García, David Montero, Álvaro Ruiz y Diego David. LLamada grupal en la que decidimos añadir la música tanto al inicio, durante y al final de la partida. Investigamos cuáles son las librerías de LibGDX correspondientes al sonido y la música y cómo funcionan. Introducimos en las clases correspondientes las nuevas variables correspondientes a los archivos de sonido. 
+
+11/03/2021 - David Montero. Busco por Internet librerías de sonido de videojuegos arcade sin copyright. Descargo todos los sonidos necesarios y los incluyo en la carpeta correspondiente. También decido añadir sonido a la serpiente cada vez que esta se mueve o crece. Finalmente hago commit para que todo quede reflejado en GitHub.
