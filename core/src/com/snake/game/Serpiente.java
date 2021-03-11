@@ -1,6 +1,9 @@
 package com.snake.game;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Sound;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 import java.util.ArrayList;
 
 /**
@@ -22,6 +25,8 @@ public class Serpiente {
 
     protected int posX, posY, ancho, anchoReal, altoReal, anchoAltoPantalla;
 
+    private Sound crecer;
+
     /////////////////////////////////////////////////////////////////////////////////////
     //
     //COMPORTAMIENTO
@@ -36,7 +41,7 @@ public class Serpiente {
         this.anchoAltoPantalla = anchoAltoPantalla;
 
         //Direccion prederteminada
-        direccion = Pieza.DER;
+        direccion = Pieza.ARR;
 
         this.posX = posX;
         this.posY = posY;
@@ -46,6 +51,7 @@ public class Serpiente {
 
         miCuerpo = new ArrayList();
         miCuerpo.add(nuevaCabeza);
+        crecer = Gdx.audio.newSound(Gdx.files.internal("crecer.wav"));
     }
 
     public Serpiente(Serpiente antigua) {
@@ -60,7 +66,8 @@ public class Serpiente {
 
         nuevaCabeza = new Pieza(posX, posY, ancho);
 
-        direccion = Pieza.DER;
+        direccion = Pieza.ARR;
+        crecer = Gdx.audio.newSound(Gdx.files.internal("crecer.wav"));
 
         miCuerpo = new ArrayList<>();
         miCuerpo.add(nuevaCabeza);
@@ -70,6 +77,7 @@ public class Serpiente {
     //Moverse (afectará a las PosX y PosY pero nunca a la vez)
     public void moverse() {
         this.crecer();
+        crecer.play();
 
         //Elimina al ultimo de la lista
         miCuerpo.remove(miCuerpo.size() - 1);
@@ -86,6 +94,7 @@ public class Serpiente {
         nuevaCabeza = new Pieza(cabezaAntigua);
         nuevaCabeza.moverse(direccion);
         miCuerpo.add(0, nuevaCabeza);
+        crecer.play();
     }
 
     //Pintarse (usará la textura y necesita un escenario, en este caso batch)
@@ -129,10 +138,10 @@ public class Serpiente {
 
         Pieza cabeza = miCuerpo.get(0);
 
-        limiteIzq = (float)(anchoReal - anchoAltoPantalla) / 2;
+        limiteIzq = (float) (anchoReal - anchoAltoPantalla) / 2;
         limiteDer = limiteIzq + anchoAltoPantalla;
 
-        limiteArr = (float)(altoReal - anchoAltoPantalla) / 2;
+        limiteArr = (float) (altoReal - anchoAltoPantalla) / 2;
         limiteAba = limiteArr + anchoAltoPantalla;
 
         return (cabeza.posX < limiteIzq || cabeza.posX > limiteDer ||

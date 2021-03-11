@@ -1,8 +1,10 @@
 package com.snake.game;
 
 import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.audio.Music;
 import com.badlogic.gdx.graphics.Texture;
 import com.badlogic.gdx.graphics.g2d.SpriteBatch;
+
 
 /**
  * Clase que implementa el controlador de nuestro videojuego. Realizará la gestión de la entrada del teclado,
@@ -25,6 +27,9 @@ public class ControladorJuego {
 
     protected final int TIEMPO_CRECER = 120;
     protected final int TIEMPO_MOVER = 30;
+    private Music menuInicio; // = Gdx.audio.newMusic(Gdx.files.internal("musicaMenu.mp3"));;
+    private Music mientrasJuega; // = Gdx.audio.newMusic(Gdx.files.internal("musicaFondo.mp3"));
+    private Music muerteSnake;  //= Gdx.audio.newMusic(Gdx.files.internal("muerteSnake.mp3"));
 
     //Esto es un truco que pone un objeto ControladorJuego en la memoria ram en el espacio asignado a la clase ControladorJuego
     private static ControladorJuego miControlador;
@@ -76,6 +81,9 @@ public class ControladorJuego {
 
         et = new EstadoTeclado(Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
         controlTiempo = 0;
+        menuInicio = Gdx.audio.newMusic(Gdx.files.internal("musicaMenu.mp3"));
+        mientrasJuega = Gdx.audio.newMusic(Gdx.files.internal("musicaFondo.mp3"));
+        muerteSnake = Gdx.audio.newMusic(Gdx.files.internal("muerteSnake.wav"));
 
     }
 
@@ -90,6 +98,7 @@ public class ControladorJuego {
     private void pantallaInicio() {
         batch.begin();
 
+        menuInicio.play();
         batch.draw(imgInicial, 0, 0, Gdx.graphics.getWidth(), Gdx.graphics.getHeight());
 
         batch.end();
@@ -102,6 +111,7 @@ public class ControladorJuego {
         recienTocado = Gdx.input.justTouched();
         if (recienTocado) {
             this.iniciaPartida();
+            menuInicio.dispose();
         }
     }
 
@@ -110,6 +120,9 @@ public class ControladorJuego {
         controladorVG = VideoJuego.JUGANDO;
         snaky.dispose();
         snaky = nuevaSer;
+        mientrasJuega.setLooping(true);
+        mientrasJuega.setVolume(0.60f);
+        mientrasJuega.play();
     }
 
     private void controlaEstadoJugando() {
@@ -145,6 +158,7 @@ public class ControladorJuego {
         //Me habre chocado?
         if (snaky.hasMuerto()) {
             controladorVG = VideoJuego.FINALIZADO;
+            mientrasJuega.dispose();
         }
 
         //Tengo que pinta r la serpiente
@@ -153,6 +167,7 @@ public class ControladorJuego {
 
     private void finalPartida() {
 
+        muerteSnake.play();
         batch.begin();
         //AQUI ES PROBABLE QUE HAYA QUE PINTAR EL FONDO
 
@@ -163,6 +178,7 @@ public class ControladorJuego {
         recienTocado = Gdx.input.justTouched();
 
         if (recienTocado) {
+            muerteSnake.dispose();
             this.iniciaPartida();
         }
     }
